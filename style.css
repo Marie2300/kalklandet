@@ -1,0 +1,571 @@
+/*--------- FONTS ----------*/
+
+@font-face {
+    font-family: 'limestonebold';
+    src: url('../LimeStone_font/limestone_bold-webfont.woff2') format('woff2'),
+        url('../LimeStone_font/limestone_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'limestoneheavy';
+    src: url('../LimeStone_font/limestone_heavy-webfont.woff2') format('woff2'),
+        url('../LimeStone_font/limestone_heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'limestonelight';
+    src: url('../LimeStone_font/limestone_light-webfont.woff2') format('woff2'),
+        url('../LimeStone_font/limestone_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'limestoneregular';
+    src: url('../LimeStone_font/limestone_regular-webfont.woff2') format('woff2'),
+        url('../LimeStone_font/limestone_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*----------GRID START----------*/
+
+main {
+    display: grid;
+    grid-template-areas:
+        "billede billede";
+    "overskrift undermenu";
+    "tekst tekst";
+    margin: 0;
+    padding: 0;
+}
+
+.indhold figure img {
+    grid-area: billede;
+    margin-bottom: 7vw;
+    padding: 0;
+    width: 100vw;
+
+}
+
+.overskrift {
+    grid-area: overskrift;
+    position: absolute;
+    top: 7vw;
+    width: 100%;
+    color: black;
+    padding-left: 1vw;
+}
+
+.undermenu {
+    grid-area: undermenu;
+    position: absolute;
+    top: 11vw;
+
+}
+
+.indhold p {
+    position: absolute grid-area: tekst;
+    color: white;
+    margin-left: 1vw;
+    font-family: 'limestonelight';
+    font-size: 2vw;
+    padding-right: 30vw;
+    margin-top: 2vw;
+}
+
+#omos .indhold {
+    position: absolute grid-area: tekst;
+    color: black;
+    font-family: 'limestonelight';
+    font-size: 2vw;
+    margin-top: -60vw;
+}
+
+
+}
+
+/*----------GRID SLUT---------*/
+
+/*----------GENERELT START---------*/
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+figure {
+    margin: 0;
+}
+
+.hide {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.indhold h4 {
+    margin: 4vw 4vw 4vw 4vw;
+}
+
+.indhold h3 {
+    margin: 5vw 4vw 5vw 4vw;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'limestoneregular';
+}
+
+p {
+    font-family: 'limestonelight';
+    color: #403D3D;
+}
+
+.overskrift {
+    text-align: left;
+}
+
+/*grid*/
+body {
+    background-color: #FBFBFB;
+    padding: 0;
+    margin: 0;
+}
+
+
+#menu a.current {
+    font-weight: bolder;
+    color: black;
+
+}
+
+
+header {
+
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+        "logo logo logo menu";
+    margin: 2vw;
+    height: 12vh;
+
+}
+
+main {
+    grid-area: main;
+    width: 100vw;
+}
+
+footer {
+    grid-area: footer;
+    width: 100vw;
+}
+
+/*logo*/
+.logo {
+    grid-area: logo;
+}
+
+.logo img {
+    width: 45vw;
+}
+
+
+/*Menu * Burgermenu * Undermenu */
+.menu {
+    grid-area: menu;
+}
+
+#menu {
+    background-color: #FAF8F8;
+    position: absolute;
+    top: 70px;
+    height: 160vh;
+    width: 100vw;
+    margin: -2vw;
+}
+
+#menu li {
+    list-style: none;
+    text-align: center;
+    padding-top: 8vw;
+
+}
+
+#menu li a {
+    margin-top: 5vh;
+    color: #403D3D;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 5vw;
+}
+
+.burgermenu_fix {
+    background-color: #FAF8F8;
+    position: fixed;
+    padding: 2vw;
+    margin: 0;
+    z-index: 2;
+}
+
+.undermenu a {
+    display: flex;
+    margin-left: 1vw;
+    text-align: left;
+    text-decoration: none;
+    text-decoration: none;
+    color: #F45D2F;
+    line-height: 50px;
+    font-family: 'limestoneregular';
+    font-size: 2.5vw;
+    width: 100%;
+}
+
+.undermenu a:hover {
+    color: white;
+}
+
+/*footer*/
+.footer_udengrid {
+    padding: 10vw;
+    background-color: white;
+}
+
+.footer_kalklandet {
+    width: 0vw;
+}
+
+.overstebox_footer {
+    margin-bottom: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.adresse_footer {
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+.kontakt_footer {
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+.some_footer {
+    margin-bottom: 5vw;
+}
+
+.somewrapper_footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.somewrapper_footer a {}
+
+.andet_footer {
+    margin-bottom: 10vw;
+}
+
+.some_footer img {
+    padding: 40px;
+    width: 4vw;
+}
+
+.some_footer_kalklandet img {
+    padding: 40px;
+    width: 4vw;
+}
+
+.footer_geomuseum .overskrift_footer {
+    color: #26A6A1;
+}
+
+.footer_kkm .overskrift_footer {
+    color: #3A7287;
+}
+
+.footer_stevns .overskrift_footer {
+    color: #1283AB;
+}
+
+.brodtekst_footer {
+    color: #403D3D;
+}
+
+/*----------GENERELT SLUT---------*/
+
+/*FORSIDE*/
+
+.splash img {
+    width: 100vw;
+    position: relative;
+    z-index: -1;
+}
+
+/*** SEARCH ****/
+
+.sog_skjul {
+    display: none;
+}
+
+.search-container {
+    position: relative;
+    top: 13px;
+    text-align: right;
+}
+
+input[type=text] {
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 13px;
+    border: none;
+}
+
+
+
+/*---------- TABLET START---------*/
+
+@media only screen and (min-width: 528px) {
+
+    .logo img {
+        width: 27vw;
+    }
+
+    /*menu, burgermenu*/
+
+    .burger-button {
+        margin-left: 68vw;
+        cursor: pointer;
+    }
+
+    #menu {
+        top: 50px;
+        margin-left: 9vw;
+    }
+
+    #menu li {
+        padding-top: 10vw;
+
+    }
+
+    #menu li a {
+        font-family: 'limestonelight';
+        font-size: 1.1rem;
+    }
+
+    .overskrift_footer {
+        color: #F45D2F;
+        font-size: 1.5rem;
+    }
+
+
+    /*---------- TABLET SLUT---------*/
+
+    /*---------- DESKTOP START---------*/
+
+    @media only screen and (min-width: 1270px) {
+
+        #menu li a:hover {
+            font-weight: bold;
+            color: #F45D2F;
+        }
+
+        .undermenu li a:hover {
+            font-weight: bold;
+            color: #F45D2F;
+        }
+
+        .logo img {
+            width: 18vw;
+        }
+
+        .hide {
+            visibility: visible;
+            pointer-events: initial;
+        }
+
+        #menu {
+            background-color: transparent;
+            margin: 0;
+            width: initial;
+            height: 0;
+        }
+
+
+        header {
+            display: inline-grid;
+            position: static;
+
+        }
+
+        .burger-button {
+            display: none;
+        }
+
+        #menu li {
+            padding: 0;
+            display: inline-grid;
+            position: relative;
+            top: -125px;
+            left: 330px;
+
+        }
+
+        #menu li a {
+            font-size: 1.5rem;
+            padding-left: 0vw;
+            padding: 0 12px 0 18px;
+        }
+
+        .sog_skjul {
+            display: initial;
+        }
+
+        header {
+            display: grid;
+            grid-template-areas:
+                "logo menu menu search";
+            width: 96%;
+
+        }
+
+        .search-container {
+            grid-area: search;
+        }
+
+        .search_pic img {
+            width: 24px;
+            position: absolute;
+            top: 0.4vw;
+            right: 0;
+        }
+
+        .overskrift {
+            text-align: left;
+        }
+
+
+        /*    footer */
+
+        .footer_udengrid {
+            height: 0.2vw;
+            margin-left: 1vw;
+            display: flex;
+            align-items: flex;
+            justify-content: space-around;
+            background-color: #FAF8F8;
+        }
+
+        .some_footer_kalklandet img {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 3vw;
+
+
+        }
+
+        .some_footer_kalklandet {
+            margin-left: 2vw;
+            margin-top: -19vw;
+        }
+
+        .overstebox_footer {
+            margin-bottom: 0vw;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .adresse_footer {
+            margin-top: -8vw;
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+
+        .adresse_footer_kalklandet {
+            margin-top: -8vw;
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+
+        .kontakt_footer {
+            margin-top: -8vw;
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+
+        .kontakt_footer_kalklandet {
+            margin-top: -8vw;
+            margin-left: 15vw;
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+
+        .some_footer {
+            margin-top: -8vw;
+            display: block;
+        }
+
+        .somewrapper_footer {
+            margin-top: -1vw;
+            display: inline-block;
+            justify-content: space-around;
+            align-items: left;
+        }
+
+        .andet_footer {
+            margin-top: -8vw;
+            display: inline-block;
+        }
+
+        .andet_footer_kalklandet {
+            margin-top: -8vw;
+            display: inline-block;
+        }
+
+        .some_footer img {
+            width: 3vw;
+        }
+
+        .overskrift_footer {
+            color: #F45D2F;
+            font-size: 1.5rem;
+        }
+
+        /*---------- DESKTOP SLUT---------*/
+
+        /*---------- DESKTOP 1300px START---------*/
+
+        @media only screen and (min-width: 1300px) {
+
+            #menu li {
+                top: -120px;
+                left: 490px;
+
+            }
+
+
+        }
+
+        /*---------- DESKTOP 1300px SLUT---------*/

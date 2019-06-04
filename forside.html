@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalklandet forside</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="kalklandets forside, du kan herfra trykke på menuen og se det museum du gerne vil se">
+</head>
+
+
+<body>
+    <div class="container">
+        <header>
+            <a href="forside.html">
+                <div class="logo"><img src="img/logo.png" alt="logo"></div>
+            </a>
+
+            <div id="burger-button" class="burger-button">☰
+            </div>
+            <nav id="menu" class="hide">
+                <ul>
+                    <li><a href="koldkrigsmuseum.html">KOLDKRIGSMUSEUM STEVNSFORT</a></li>
+                    <li><a href="stevnsklint.html">STEVNS KLINT</a></li>
+                    <li><a href="geomuseum.html">GEOMUSEUM FAXE</a></li>
+                    <li><a href="om.html">OM OS</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container sog_skjul">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="SØG" name="search">
+                </form>
+                <div class="search_pic"><img src="img/search.png" alt=""></div>
+            </div>
+
+        </header>
+        <main>
+
+
+            <picture class="splash">
+                <img src="img/splash.jpg" alt="Kort">
+            </picture>
+
+
+        </main>
+
+        <footer>
+            <div class="footer_udengrid">
+                <div class="overstebox_footer">
+                    <div class="adresse_footer_kalklandet">
+                        <p class="overskrift_footer">ADRESSE</p>
+                        <p class="brodtekst_footer">Østsjællands <br> Museum</p>
+                        <p class="brodtekst_footer">Rådhusvej 2</p>
+                        <p class="brodtekst_footer">4640 Faxe</p>
+                    </div>
+
+                    <div class="kontakt_footer_kalklandet">
+                        <p class="overskrift_footer">KONTAKT</p>
+                        <p class="brodtekst_footer"> Telefonen er åben mandag til fredag <br> fra kl. 9 til 15.</p>
+                        <p class="telefon_footer">+45 56502806</p>
+                    </div>
+                </div>
+
+                <div class="andet_footer_kalklandet">
+                    <p class="overskrift_footer">SPROG</p>
+                    <p class="overskrift_footer">PRESSE</p>
+                    <p class="overskrift_footer">FONDE OG SPONSORATER</p>
+                </div>
+            </div>
+
+            <div class="some_footer_kalklandet">
+                <p class="overskrift_footer">FØLG OS PÅ</p>
+                <div class="somewrapper_footer">
+                    <a href="https://www.facebook.com/stevnsklint/"><img src="img/icon_fb.png" alt="facebook"></a>
+                    <a href="https://www.instagram.com/oestsjaellandsmuseum/?hl=da"><img src="img/icon_instagram.png" alt="instagram"></a>
+                </div>
+            </div>
+
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", sidenVises);
+
+            let indhold;
+
+            function sidenVises() {
+                //console.log("siden vises");
+                // registrer klik på menuknap
+                document.querySelector(".burger-button").addEventListener("click", toggleMenu);
+
+                //pop up vindue
+                //document.querySelector(".lokation_popup").classList.add("hide");
+                document.querySelectorAll(".lokation_popup").forEach(e => {
+                    e.classList.add("hide");
+                })
+
+
+                document.querySelector("#koldkrig_lokation").addEventListener("click", e => {
+
+                    console.log(e.target.parentElement.id);
+                    let valgt = e.target.parentElement.id;
+
+                    document.querySelector("#" + valgt + " figcaption").classList.toggle("hide");
+
+                })
+
+                document.querySelector("#stevnsklint_lokation").addEventListener("click", e => {
+
+                    console.log(e.target.parentElement.id);
+                    let valgt = e.target.parentElement.id;
+
+                    document.querySelector("#" + valgt + " figcaption").classList.toggle("hide");
+
+                })
+
+                document.querySelector("#geomuseum_lokation").addEventListener("click", e => {
+
+                    console.log(e.target.parentElement.id);
+                    let valgt = e.target.parentElement.id;
+
+                    document.querySelector("#" + valgt + " figcaption").classList.toggle("hide");
+
+                })
+
+
+                visMenuStreger();
+
+            }
+
+
+            function toggleMenu() {
+                console.log("Toggle menu");
+                document.querySelector("#menu").classList.toggle("hide");
+
+                let erSkjult = document.querySelector("#menu").classList.contains("hide");
+                document.querySelector("header").classList.toggle("burgermenu_fix");
+
+
+                if (erSkjult == true) {
+                    //menuen er skjult - ændr menuknap til lll
+                    document.querySelector(".burger-button img").textContent = "☰";
+                } else {
+                    //menuen er nu vist - ændr menuknap til X
+                    document.querySelector(".burger-button img").innerHTML = "X";
+                }
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

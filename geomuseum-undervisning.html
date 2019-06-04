@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geomuseum Faxe undervisning</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="se hvad Geomuseum tilbyder af undervisning">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="forside.html">
+                <div class="logo"><img src="img/logo_geomuseum.png" alt="logo"></div>
+            </a>
+
+            <div id="burger-button" class="burger-button">☰
+            </div>
+            <nav id="menu" class="hide">
+                <ul>
+                    <li><a href="koldkrigsmuseum.html">KOLDKRIGSMUSEUM STEVNSFORT</a></li>
+                    <li><a href="stevnsklint.html">STEVNS KLINT</a></li>
+                    <li><a class="current" href="geomuseum.html">GEOMUSEUM FAXE</a></li>
+                    <li><a href="om.html">OM OS</a></li>
+                </ul>
+            </nav>
+            <div class="search-container sog_skjul">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="SØG" name="search">
+                </form>
+                <div class="search_pic"><img src="img/search.png" alt=""></div>
+            </div>
+
+        </header>
+
+
+        <main>
+            <picture class="splash">
+                <img src="img/geomuseum_undervisning.png" alt="Geomuseum undervisning">
+            </picture>
+
+            <h1 class="overskrift"></h1>
+            <div class="undermenu">
+                <ul>
+                    <li><a href="geomuseum-praktisk.html">PRAKTISK INFO</a></li>
+                    <li><a class="current" href="geomuseum-undervisning.html">UNDERVISNING</a></li>
+                </ul>
+                <div class="indhold">
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer_geomuseum">
+                <div class="footer_udengrid">
+                    <div class="overstebox_footer">
+                        <div class="adresse_footer">
+                            <p class="overskrift_footer">ADRESSE</p>
+                            <p class="brodtekst_footer">Østsjællands <br> Museum</p>
+                            <p class="brodtekst_footer">Rådhusvej 2</p>
+                            <p class="brodtekst_footer">4640 Faxe</p>
+                        </div>
+
+                        <div class="kontakt_footer">
+                            <p class="overskrift_footer">KONTAKT</p>
+                            <p class="telefon_footer">+45 56502806</p>
+                            <p class="brodtekst_footer"> Telefonen er åben mandag til fredag <br> fra kl. 9 til 15.</p>
+                        </div>
+                    </div>
+
+                    <div class="some_footer">
+                        <p class="overskrift_footer">FØLG OS PÅ</p>
+                        <div class="somewrapper_footer">
+                            <a href="https://www.facebook.com/stevnsklint/"><img src="socialmedia/geomuseum_fb.png" alt="facebook"></a>
+                            <a href="https://www.instagram.com/oestsjaellandsmuseum/?hl=da"><img src="socialmedia/geomuseum_insta.png" alt="instagram"></a>
+                            <a href="https://twitter.com/hashtag/kalklandet?src=hash"><img src="socialmedia/geomuseum_tw.png" alt="twitter"></a>
+                            <img src="socialmedia/geomuseum_yt.png" alt="youtube">
+                        </div>
+                    </div>
+
+                    <div class="andet_footer">
+                        <p class="overskrift_footer">SPROG</p>
+                        <p class="overskrift_footer">PRESSE</p>
+                        <p class="overskrift_footer">FONDE OG SPONSORATER</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", sidenVises);
+
+            let indhold;
+
+            function sidenVises() {
+                console.log("siden vises");
+                // registrer klik på menuknap
+                document.querySelector(".burger-button").addEventListener("click", toggleMenu);
+
+                start();
+                visMenuStreger();
+
+            }
+
+            function toggleMenu() {
+                console.log("Toggle menu");
+                document.querySelector("#menu").classList.toggle("hide");
+                document.querySelector("header").classList.toggle("burgermenu_fix");
+
+                let erSkjult = document.querySelector("#menu").classList.contains("hide");
+
+                if (erSkjult == true) {
+                    //menuen er skjult - ændr menuknap til lll
+                    document.querySelector(".burger-button img").src = "img/burgermenu.png";
+                } else {
+                    //menuen er nu vist - ændr menuknap til X
+                    document.querySelector(".burger-button img").src = "img/cancel.png";
+                }
+            }
+
+            function start() {
+                async function getJson() {
+                    let url = "http://multikanal.dk/kea/wordpress/wp-json/wp/v2/pages/14"
+                    let jsonData = await fetch(url);
+                    indhold = await jsonData.json();
+                    visIndhold();
+                }
+
+                function visIndhold() {
+                    document.querySelector(".overskrift").textContent = indhold.title.rendered;
+                    document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+                }
+                getJson();
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
