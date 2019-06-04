@@ -2,8 +2,7 @@
 
 @font-face {
     font-family: 'limestonebold';
-    src: url('../LimeStone_font/limestone_bold-webfont.woff2') format('woff2'),
-        url('../LimeStone_font/limestone_bold-webfont.woff') format('woff');
+    src: url(limestone_bold.woff);
     font-weight: normal;
     font-style: normal;
 
@@ -11,8 +10,7 @@
 
 @font-face {
     font-family: 'limestoneheavy';
-    src: url('../LimeStone_font/limestone_heavy-webfont.woff2') format('woff2'),
-        url('../LimeStone_font/limestone_heavy-webfont.woff') format('woff');
+    src: url(limestone_heavy.woff);
     font-weight: normal;
     font-style: normal;
 
@@ -20,8 +18,7 @@
 
 @font-face {
     font-family: 'limestonelight';
-    src: url('../LimeStone_font/limestone_light-webfont.woff2') format('woff2'),
-        url('../LimeStone_font/limestone_light-webfont.woff') format('woff');
+    src: url(limestone_light.woff);
     font-weight: normal;
     font-style: normal;
 
@@ -29,8 +26,7 @@
 
 @font-face {
     font-family: 'limestoneregular';
-    src: url('../LimeStone_font/limestone_regular-webfont.woff2') format('woff2'),
-        url('../LimeStone_font/limestone_regular-webfont.woff') format('woff');
+    src: url(limestone_regular.woff);
     font-weight: normal;
     font-style: normal;
 
