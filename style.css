@@ -346,7 +346,7 @@ input[type=text] {
 
     /*---------- DESKTOP START---------*/
 
-    @media only screen and (min-width: 1270px) {
+    @media only screen and (min-width: 992px) {
 
         #menu li a:hover {
             font-weight: bold;
@@ -389,9 +389,8 @@ input[type=text] {
             padding: 0;
             display: inline-grid;
             position: relative;
-            top: -125px;
-            left: 330px;
-
+            top: -6.5vw;
+            left: 20vw;
         }
 
         #menu li a {
@@ -516,18 +515,3 @@ input[type=text] {
         }
 
         /*---------- DESKTOP SLUT---------*/
-
-        /*---------- DESKTOP 1300px START---------*/
-
-        @media only screen and (min-width: 1300px) {
-
-            #menu li {
-                top: -120px;
-                left: 490px;
-
-            }
-
-
-        }
-
-        /*---------- DESKTOP 1300px SLUT---------*/
